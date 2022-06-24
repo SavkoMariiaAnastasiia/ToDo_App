@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {Button} from '@mui/material'
+import TomatoButton from "./styles/App"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <div className="list">
+          <div className="list_content">
+            <strong>1.Stady</strong>
+            <div>fsdfshsfdhfh</div>
+          </div>
+          <Button variant="outlined" color="error" size="small">delete</Button>
+            <TomatoButton>TomatoButton</TomatoButton>
+        </div>
+      </div>
   );
 }
 
