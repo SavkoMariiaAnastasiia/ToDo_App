@@ -1,11 +1,23 @@
-import styled from 'styled-components'
+import styled, {createGlobalStyle} from 'styled-components'
 
-const TomatoButton = styled.button`
-  color: tomato;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid tomato;
-  border-radius: 3px;
+export const Global = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 `;
-export default TomatoButton;
+
+export const Appp = styled.div`
+  display: flex;
+  flex-direction:  column;
+  align-items: center;
+`;
+export const Root = styled.div`
+  display: flex;
+  width: 800px;
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
+  justify-content: space-between;
+`;
