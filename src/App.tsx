@@ -1,17 +1,12 @@
 import React from 'react';
-import {Button} from '@mui/material'
-import {Appp, Root} from './styles/App'
+import {Appp} from './styles/App'
+import PostItem from "./components/PostItem";
 
 
 function App() {
     return (
         <Appp>
-            <Root>
-                <div>
-                    <strong>1.Stady </strong>
-                    <br/>fsdfshsfdhfh</div>
-                <Button variant="outlined" color="error" size="small">delete</Button>
-            </Root>
+            <PostItem value={"222"}/>
         </Appp>
     );
 }
