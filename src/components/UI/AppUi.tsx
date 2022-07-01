@@ -21,3 +21,11 @@ export const Root = styled.div`
   margin-top: 15px;
   justify-content: space-between;
 `;
+export const Inp = styled.div`
+  display: flex;
+  margin-right: 130px;
+  width: 700px;
+  padding: 20px;
+  margin-top: 15px;
+  justify-content: space-between;
+`;
