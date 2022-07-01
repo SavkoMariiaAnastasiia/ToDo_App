@@ -1,8 +1,8 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import {Inp} from "./UI/AppUi"
 import {Button, TextField} from "@mui/material";
 
-const Input = (setPost: any) => {
+const Input = () => {
     const [title,setTitle] = useState("")
     const [body,setBody] = useState("")
 

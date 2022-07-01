@@ -6,7 +6,7 @@ const PostItem = (props: any) => {
     return (
             <Root>
                 <div>
-                    <strong>{props.post.id}. {props.post.title} </strong>
+                    <strong>{props.number}. {props.post.title} </strong>
                     <br/>{props.post.body}</div>
                 <Button variant="outlined" color="error" size="small">delete</Button>
             </Root>
