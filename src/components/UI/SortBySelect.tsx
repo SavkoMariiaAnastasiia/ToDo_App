@@ -4,7 +4,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
-const SortBySelect = () => {
+const SortBySelect = (props:any) => {
     const [sort, setSort] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
         setSort(event.target.value as string);
@@ -15,7 +15,7 @@ const SortBySelect = () => {
                 <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
-                    value={sort}
+                    value={props.value}
                     label="Age"
                     onChange={handleChange}
                 >
