@@ -14,6 +14,7 @@ export const Appp = styled.div`
   flex-direction:  column;
   align-items: center;
 `;
+
 export const Root = styled.div`
   display: flex;
   width: 800px;
@@ -23,6 +24,7 @@ export const Root = styled.div`
   justify-content: space-between;
   border-radius: 5px;
 `;
+
 export const Inp = styled.div`
   display: flex;
   margin-right: 130px;
@@ -31,3 +33,24 @@ export const Inp = styled.div`
   margin-top: 15px;
   justify-content: space-between;
 `;
+
+export const MyModal = styled.div` 
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+    background: rgba(0,0,0, 0.5);
+    &:active{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+`;
+export const MyModalContent = styled.div`
+    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    min-width: 250px;
+` ;

@@ -1,7 +1,9 @@
-import React, {useMemo, useState} from "react"
+import React, {useState} from "react"
 import {Appp} from "./components/UI/AppUi"
 import PostList from "./components/PostList";
 import InputPost from "./components/UI/InputPost";
+import Modal from "./components/UI/Modal";
+import {usePosts} from "./components/hooks/usePosts";
 
 
 function App() {
@@ -10,21 +12,23 @@ function App() {
         {id:2,title:"bbbbb",body:"description"},
         {id:3,title:"ccccc",body:"description"},
     ])
+    const [button,setButton] = useState([
+        {id:11,text:"in the process",color:"warning",variant:"outlined"},
+    ])
+    const selectButton = () => {
+      if(button[0]==={id:11,text:"in the process",color:"warning",variant:"outlined"}){
+          button[0]={id:12,text:"finished",color:"success",variant:"Contained"}
+      }
+      else {
+          button[0]={id:11,text:"in the process",color:"warning",variant:"outlined"}
+      }
+      return button
+    }
 
     const [selectSort, setSelectSort]=useState("")
     const [search, setSearch]=useState("")
+    const sortAndSerched = usePosts(posts,selectSort,search)
 
-    const sortedPosts = useMemo(
-        ()=>{
-            if(selectSort){
-                return [...posts].sort((a:any ,b:any) => a[selectSort].localeCompare(b[selectSort]))
-            }
-            return posts
-        },[setSelectSort,posts]
-    )
-    const sortAndSerched = useMemo(()=>{
-        return sortedPosts.filter(post => post.title.toLowerCase().includes(search))
-    },[search, sortedPosts])
 
     const createPost = (newPost: any) => {
         setPosts([...posts, newPost])
@@ -34,14 +38,12 @@ function App() {
         setPosts(posts.filter(p => p.id !==post.id))
     }
 
-    const sortPost = (sort: any) => {
-        setSelectSort(sort)
-    }
-
     return (
         <Appp>
+            <Modal/>
             <InputPost create={createPost}/>
             <PostList
+                button={button}
                 remove={deletePost} posts={sortAndSerched} title={"To Do list stady"}
                 value={search} onChange={(e :any) => setSearch(e.target.value)}
             />

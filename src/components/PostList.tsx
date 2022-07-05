@@ -14,7 +14,7 @@ const PostList = (props: any) => {
             />
             <SortBySelect/>
             {props.posts.map((post: any, index: any) =>
-                <PostItem remove={props.remove} number={index+1} post={post} key={post.id}/>
+                <PostItem remove={props.remove} number={index+1} post={post} key={post.id} button={props.button} />
             )}
         </div>
     );
