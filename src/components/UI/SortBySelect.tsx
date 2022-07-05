@@ -4,29 +4,25 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 
-const SortBySelect = (props:any) => {
-    const [sort, setSort] = React.useState('');
+const SortBySelect = (props: any) => {
     const handleChange = (event: SelectChangeEvent) => {
-        setSort(event.target.value as string);
-        const status = event.target.value
-        props.status(status)
+        props.setStatus(event.target.value);
     };
 
     return (
-            <FormControl variant="standard" color={"success"} sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-label">sort</InputLabel>
-                <Select
-                    labelId="demo-simple-select-standard-label"
-                    id="demo-simple-select-standard"
-                    value={props.value}
-                    label="Age"
-                    onChange={handleChange}
-                >
-                    <MenuItem value={"all"}>all</MenuItem>
-                    <MenuItem value={"in process"}>in process</MenuItem>
-                    <MenuItem value={"done"}>done</MenuItem>
-                </Select>
-            </FormControl>
+        <FormControl variant="standard" color={'success'} sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel id="demo-simple-select-label">sort</InputLabel>
+            <Select
+                labelId="demo-simple-select-standard-label"
+                id="demo-simple-select-standard"
+                value={props.status}
+                label="Age"
+                onChange={handleChange}>
+                <MenuItem value={'all'}>all</MenuItem>
+                <MenuItem value={'in process'}>in process</MenuItem>
+                <MenuItem value={'done'}>done</MenuItem>
+            </Select>
+        </FormControl>
     );
 };
 
