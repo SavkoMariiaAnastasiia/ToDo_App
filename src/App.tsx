@@ -7,44 +7,34 @@ import {usePosts} from "./components/hooks/usePosts";
 
 
 function App() {
-    const [posts,setPosts] = useState([
-        {id:1,title:"aaaa",body:"description"},
-        {id:2,title:"bbbbb",body:"description"},
-        {id:3,title:"ccccc",body:"description"},
+    const [item,setItem] = useState([
+        {id:1,title:"aaaa",body:"description",check:false},
+        {id:2,title:"bbbbb",body:"description",check:false},
     ])
-    const [button,setButton] = useState([
-        {id:11,text:"in the process",color:"warning",variant:"outlined"},
-    ])
-    const selectButton = () => {
-      if(button[0]==={id:11,text:"in the process",color:"warning",variant:"outlined"}){
-          button[0]={id:12,text:"finished",color:"success",variant:"Contained"}
-      }
-      else {
-          button[0]={id:11,text:"in the process",color:"warning",variant:"outlined"}
-      }
-      return button
+    const statusItem = (status: any) => {
+        return status
     }
-
+    const [filtitem,setFiltitem] = useState([...item])
     const [selectSort, setSelectSort]=useState("")
     const [search, setSearch]=useState("")
-    const sortAndSerched = usePosts(posts,selectSort,search)
+    const sortAndSerched = usePosts(item,statusItem,search)
 
 
-    const createPost = (newPost: any) => {
-        setPosts([...posts, newPost])
+    const createItem = (newPost: any) => {
+        setItem([...item, newPost])
     }
 
-    const deletePost = (post: any) => {
-        setPosts(posts.filter(p => p.id !==post.id))
+    const deleteItem = (post: any) => {
+        setItem(item.filter(p => p.id !==post.id))
     }
 
     return (
         <Appp>
             <Modal/>
-            <InputPost create={createPost}/>
+            <InputPost create={createItem}/>
             <PostList
-                button={button}
-                remove={deletePost} posts={sortAndSerched} title={"To Do list stady"}
+                status={statusItem}
+                remove={deleteItem} posts={sortAndSerched} title={"To Do list stady"}
                 value={search} onChange={(e :any) => setSearch(e.target.value)}
             />
         </Appp>

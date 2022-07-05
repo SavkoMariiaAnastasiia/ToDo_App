@@ -5,7 +5,6 @@ export const Global = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #59362a;
   }
 `;
 
@@ -19,7 +18,7 @@ export const Root = styled.div`
   display: flex;
   width: 800px;
   padding: 15px;
-  border: 2px solid #5B6125;
+  border: 2px solid #246200;
   margin-top: 15px;
   justify-content: space-between;
   border-radius: 5px;

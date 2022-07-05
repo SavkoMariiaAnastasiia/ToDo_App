@@ -8,9 +8,12 @@ const SortBySelect = (props:any) => {
     const [sort, setSort] = React.useState('');
     const handleChange = (event: SelectChangeEvent) => {
         setSort(event.target.value as string);
+        const status = event.target.value
+        props.status(status)
     };
+
     return (
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+            <FormControl variant="standard" color={"success"} sx={{ m: 1, minWidth: 120 }}>
                 <InputLabel id="demo-simple-select-label">sort</InputLabel>
                 <Select
                     labelId="demo-simple-select-standard-label"

@@ -1,18 +1,32 @@
 import {useMemo} from "react";
 
-export const useSortedPosts = (posts: any,sort: any) => {
-    const sortedPosts = useMemo(
+export const useSortedItems = (item: any, status: any) => {
+    const sortedItems = useMemo(
         ()=>{
-            if(sort){
-                return [...posts].sort((a:any ,b:any) => a[sort].localeCompare(b[sort]))
+            if (status==="in process"){
+                [...item].filter(function (e) {
+                    console.log(!e.check)
+                    return !e.check;
+                })
+                console.log("jdhsfkshb")
             }
-            return posts
-        },[sort,posts]
+            if (status==="done"){
+                [...item].filter(function (e) {
+                    return e.check;
+                })
+            }
+            if (status==="all"){
+                [...item].filter(function (e) {
+                    return item;
+                })
+            }
+            else return item;
+        },[status,item]
     )
-    return sortedPosts
+    return sortedItems
 }
-export const usePosts = (posts:any,sort:any,search:any) => {
-    const sortedPosts = useSortedPosts(posts,sort)
+export const usePosts = (item:any,status:any,search:any) => {
+    const sortedPosts = useSortedItems(item,status)
     const sortAndSerched = useMemo(()=>{
         return sortedPosts.filter((post:any) => post.title.toLowerCase().includes(search))
     },[search, sortedPosts])

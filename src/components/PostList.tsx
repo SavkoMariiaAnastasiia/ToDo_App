@@ -12,9 +12,9 @@ const PostList = (props: any) => {
             value={props.value}
             onChange={props.onChange}
             />
-            <SortBySelect/>
+            <SortBySelect status={props.status}/>
             {props.posts.map((post: any, index: any) =>
-                <PostItem remove={props.remove} number={index+1} post={post} key={post.id} button={props.button} />
+                <PostItem remove={props.remove} number={index+1} post={post} key={post.id} />
             )}
         </div>
     );

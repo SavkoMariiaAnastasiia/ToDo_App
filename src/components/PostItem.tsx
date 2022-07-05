@@ -1,20 +1,27 @@
 import React from 'react';
-import {Button} from "@mui/material";
+import {Checkbox} from "@mui/material";
 import {Root} from "./UI/AppUi";
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
+import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
 const PostItem = (props: any) => {
-    console.log(props.button.text)
+    const chacked = () => {
+        props.post.check = props.post.check !== true;
+        console.log(props.post.check)
+        return props.post.check
+    }
+
     return (
         <Root>
             <div>
                 <strong>{props.number}. {props.post.title} </strong>
                 <br/>{props.post.body}</div>
             <div>
-                <Button variant="outlined" color="warning" size="small">{props.button.text}</Button>
+                <Checkbox icon={<TaskAltIcon />} checkedIcon={<TaskAltIcon />} color={"success"} onClick={chacked}/>
+
             <IconButton
-                onClick={() => props.remove(props.post)}>
+                onClick={() => props.remove(props.post)} color={"error"}>
                 <DeleteIcon />
             </IconButton>
             </div>
