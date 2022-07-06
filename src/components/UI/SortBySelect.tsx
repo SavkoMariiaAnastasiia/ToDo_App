@@ -16,7 +16,7 @@ const SortBySelect = (props: any) => {
                 labelId="demo-simple-select-standard-label"
                 id="demo-simple-select-standard"
                 value={props.status}
-                label="Age"
+                label="Status"
                 onChange={handleChange}>
                 <MenuItem value={'all'}>all</MenuItem>
                 <MenuItem value={'in process'}>in process</MenuItem>

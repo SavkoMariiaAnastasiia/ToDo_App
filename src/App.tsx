@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Appp} from "./components/UI/AppUi"
+import {Appp, Bg} from "./components/UI/AppUi"
 import PostList from "./components/PostList";
 import InputPost from "./components/UI/InputPost";
 import Modal from "./components/UI/Modal";
@@ -24,19 +24,23 @@ function App() {
     };
 
     return (
-        <Appp>
-            <Modal />
-            <InputPost create={createItem} />
-            <PostList
-                status={statusItem}
-                setStatus={setStatusItem}
-                remove={deleteItem}
-                posts={sortAndSerched}
-                title={'To Do list stady'}
-                value={search}
-                onChange={(e: any) => setSearch(e.target.value)}
-            />
-        </Appp>
+        <Bg>
+            <Appp>
+
+                <Modal />
+                <InputPost create={createItem} />
+                <PostList
+                    status={statusItem}
+                    setStatus={setStatusItem}
+                    remove={deleteItem}
+                    posts={sortAndSerched}
+                    title={'To Do list stady'}
+                    value={search}
+                    onChange={(e: any) => setSearch(e.target.value)}
+                />
+            </Appp>
+        </Bg>
+
     );
 }
 
