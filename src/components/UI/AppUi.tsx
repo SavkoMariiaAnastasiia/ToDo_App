@@ -9,7 +9,7 @@ export const Global = createGlobalStyle`
 `;
 export const Bg = styled.div`
   width: auto;
-  height: auto;
+  min-height: 100vh;
   background: linear-gradient(-45deg, #eea88b, #eac0ae, #8abfe3, #8cdaa8);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;

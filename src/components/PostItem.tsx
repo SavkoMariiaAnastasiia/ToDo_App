@@ -7,19 +7,20 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import DeadLine from "./UI/DeadLine";
 
 const PostItem = (props: any) => {
-    const chacked = () => {
-        props.post.check = props.post.check !== true;
-        if(props.post.check===true){
-            setStatusChack({status: "Status: finished", color:"olivedrab"})
+    const [statusCheck,setStatusCheck]=useState({
+        status:"Status: in process",color:"orange"
+    })
+
+    const checked = () => {
+        props.post.check = !props.post.check;
+        if(props.post.check){
+            setStatusCheck({status: "Status: finished", color:"olivedrab"})
         }
         else {
-            setStatusChack({ status:"Status: in process",color:"orange"})
+            setStatusCheck({ status:"Status: in process",color:"orange"})
         }
         return props.post.check
     }
-    const [statusChack,setStatusChack]=useState({
-        status:"Status: in process",color:"orange"
-    })
 
     return (
         <Item>
@@ -28,9 +29,9 @@ const PostItem = (props: any) => {
                 <br/>{props.post.body}</div>
             <div>
                 <DeadLine/>
-                <Status color={statusChack.color}>{statusChack.status}</Status>
+                <Status color={statusCheck.color}>{statusCheck.status}</Status>
                 <Icons>
-                <Checkbox icon={<TaskAltIcon />} checkedIcon={<TaskAltIcon />} color={"success"} onClick={chacked}/>
+                <Checkbox icon={<TaskAltIcon />} checkedIcon={<TaskAltIcon />} color={"success"} onClick={checked}/>
             <IconButton
                 onClick={() => props.remove(props.post)} color={"error"}>
                 <DeleteIcon />

@@ -8,12 +8,11 @@ import {usePosts} from "./components/hooks/usePosts";
 
 function App() {
     const [item, setItem] = useState([
-        { id: 1, title: 'aaaa', body: 'description', check: false },
-        { id: 2, title: 'bbbbb', body: 'description', check: false },
+        { id: 1, title: 'Hello', body: 'This is your first task here', check: false },
     ]);
     const [statusItem, setStatusItem] = useState('all');
     const [search, setSearch] = useState('');
-    const sortAndSerched = usePosts(item, statusItem, search);
+    const sortAndSearched = usePosts(item, statusItem, search);
 
     const createItem = (newPost: any) => {
         setItem([...item, newPost]);
@@ -33,8 +32,8 @@ function App() {
                     status={statusItem}
                     setStatus={setStatusItem}
                     remove={deleteItem}
-                    posts={sortAndSerched}
-                    title={'To Do list stady'}
+                    posts={sortAndSearched}
+                    title={'To Do list study'}
                     value={search}
                     onChange={(e: any) => setSearch(e.target.value)}
                 />

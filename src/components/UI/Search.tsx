@@ -1,7 +1,7 @@
 import React from 'react';
 import {TextField} from "@mui/material";
 
-const Serch = (props: any) => {
+const Search = (props: any) => {
     return (
         <TextField
             id="outlined-basic"
@@ -14,4 +14,4 @@ const Serch = (props: any) => {
     );
 };
 
-export default Serch;
+export default Search;

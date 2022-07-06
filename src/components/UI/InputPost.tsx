@@ -24,12 +24,12 @@ const InputPost = ({create}: any) => {
                         onChange={e => setPost({...post, title: e.target.value})}
                     />
                     <TextField id="outlined-basic"
-                               label="body"
+                               label="description"
                                variant="outlined"
                                value={post.body}
                                onChange={e => setPost({...post, body: e.target.value})}
                     />
-                    <Button onClick={addNewPost} variant="outlined" color="success" size="large">create a post</Button>
+                    <Button onClick={addNewPost} variant="outlined" color="success" size="large">create a task</Button>
                 </Inp>
             </form>
     )
