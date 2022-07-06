@@ -7,9 +7,14 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import DeadLine from "./UI/DeadLine";
 
 const PostItem = (props: any) => {
-    const [statusCheck,setStatusCheck]=useState({
-        status:"Status: in process",color:"orange"
-    })
+    const [statusCheck, setStatusCheck] = useState(
+        props.post.check
+            ? { status: "Status: finished", color: "olivedrab" }
+            : {
+                status: "Status: in process",
+                color: "orange",
+            }
+    );
 
     const checked = () => {
         props.post.check = !props.post.check;
