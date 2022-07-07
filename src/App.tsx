@@ -2,7 +2,6 @@ import React, {useState} from "react"
 import {Appp, Bg} from "./components/UI/AppUi"
 import PostList from "./components/PostList";
 import InputPost from "./components/UI/InputPost";
-import Modal from "./components/UI/Modal";
 import {usePosts} from "./components/hooks/usePosts";
 
 
@@ -25,8 +24,6 @@ function App() {
     return (
         <Bg>
             <Appp>
-
-                <Modal />
                 <InputPost create={createItem} />
                 <PostList
                     status={statusItem}

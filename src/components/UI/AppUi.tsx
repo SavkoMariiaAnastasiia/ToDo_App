@@ -8,7 +8,7 @@ export const Global = createGlobalStyle`
   }
 `;
 export const Bg = styled.div`
-  width: auto;
+  width: 100%;
   min-height: 100vh;
   background: linear-gradient(-45deg, #eea88b, #eac0ae, #8abfe3, #8cdaa8);
   background-size: 400% 400%;
@@ -52,26 +52,6 @@ export const Inp = styled.div`
   justify-content: space-between;
 `;
 
-export const MyModal = styled.div` 
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: none;
-    background: rgba(0,0,0, 0.5);
-    &:active{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-`;
-export const MyModalContent = styled.div`
-    padding: 25px;
-    background: white;
-    border-radius: 16px;
-    min-width: 250px;
-` ;
 export const Status = styled.div`
     text-align: center;
     margin-top: 5px;
